@@ -1,0 +1,28 @@
+name: Refresh Elastic with updated blog content
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Refresh elastic
+        env:
+          ELASTIC_HOST: ${{ secrets.ELASTIC_HOST }}
+          ELASTIC_USER: ${{ secrets.ELASTIC_USER }}
+          ELASTIC_PASSWORD: ${{ secrets.ELASTIC_PASSWORD }}
+        run: npm run update-elastic
+
+      - name: Commit updates
+        run: |
+          git config --global user.name 'lazizcodes'
+          git config --global user.email 'lazizabdullaev02@gmail.com'
+          git commit -am "Elastic update"
+          git push

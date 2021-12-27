@@ -1,0 +1,21 @@
+{
+  "name": "mdx-elastic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "update-elastic": "node -r dotenv/config script.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@elastic/elasticsearch": "^7.16.0",
+    "dotenv": "^10.0.0",
+    "gray-matter": "^4.0.3",
+    "nanoid": "^3.1.30",
+    "recursive-readdir": "^2.2.2",
+    "remove-markdown": "^0.3.0",
+    "yaml": "^1.10.2"
+  }
+}
