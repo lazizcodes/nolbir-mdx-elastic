@@ -7,7 +7,7 @@ const path = require('path');
 const { updateIndex } = require('./elastic');
 
 const BLOGS_PATH = path.join(__dirname, 'blog');
-console.log('Here it is:', BLOGS_PATH)
+
 function stringToSlug(str) {
   str = str.replace(/^\s+|\s+$/g, ''); // trim
   str = str.toLowerCase();
@@ -29,7 +29,7 @@ function stringToSlug(str) {
 
 async function getFiles(path, extension) {
   const files = await readdir(path);
-
+  console.log('FILES', files)
   return files.filter((file) => new RegExp(`${extension}$`).test(file));
 }
 
