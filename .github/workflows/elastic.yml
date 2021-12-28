@@ -23,7 +23,7 @@ jobs:
 
       - name: Commit updates
         run: |
-          git config --global user.name 'lazizcodes'
-          git config --global user.email 'lazizabdullaev02@gmail.com'
-          git commit -am "Elastic update"
-          git push
+          git config --global user.name 'lazizcodes' || true
+          git config --global user.email 'lazizabdullaev02@gmail.com' || true
+          git commit -am "Elastic update" || true
+          git push || true
