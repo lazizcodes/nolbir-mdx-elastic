@@ -7,7 +7,7 @@ const path = require('path');
 const { updateIndex } = require('./elastic');
 
 const BLOGS_PATH = path.join(__dirname, 'blog');
-
+console.log('Here it is:', BLOGS_PATH)
 function stringToSlug(str) {
   str = str.replace(/^\s+|\s+$/g, ''); // trim
   str = str.toLowerCase();
